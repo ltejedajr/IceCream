@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IceCream</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+
+<style>
+
+.box{
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+/* #addToppings {
+    display: none;
+} */
+
+#toppings {
+    margin-left: 30px;
+    margin-top: -5px;
+    width: 500px;
+    height: 150px;
+}
+
+label {
+    display: inline;
+    width: 1px;
+}
+
+#icecream {
+    position: absolute;
+    text-align: center;
+    color: white;
+    transform: translate(40%, 5%); rotate: -15deg;
+
+ }
+
+
+</style>
+   
+  <body>
+    <header class="container">
+        
+    </header>
+
+    <main class="container">
+        <div class="box mt-3" style="background-color: rgb(250, 184, 105);">
+            <img id="icecream" src="images/icecream.png" width="80px" height="80px">
+            <h1 style="text-align: center;font-style: italic; 
+                -webkit-text-stroke: .60px; -webkit-text-stroke-color: black; color:#59eacd; "> &nbsp; World Famous Ice Cream!</h1>
+            <div style="text-align: center;">
+                <label class="form-label" for="inputNumOfScoops">Number of Scoops (1-4):</label>
+                <input class="form-label" id="inputNumOfScoops" type="number" style="width: 50px;" min="1" max="4" required><br><br>
+
+                <input type="radio" name="serving" id="coneRadioBtn" value="cone"> Cone 
+                <input type="radio" onclick="onHideOrShowAddToppings()" name="serving" id="cupRadioBtn" value="cup" style="margin-left: 30px;"> Cup<br><br>
+                
+            </div>
+            
+            <div id="addToppings">
+                    <p style="text-align: left;text-indent: 2em;margin-bottom: 5px;">Toppings</p>
+
+                <div class="box" id="toppings" style="background-color: rgb(213, 96, 96);" >
+                    <input type="checkbox" id="sprinklesChkBox" name="sprinklesChkBox" value="sprinklesChkBox"
+                    style="margin-top: 20px; margin-bottom: 35px; margin-left: 15px;">
+                    <label for="sprinklesChkBox"></label>Sprinkles ($0.50)</label> 
+                
+                    <input type="checkbox" id="whippedCreamChkBox" name="whippedCreamChkBox" value="whippedCreamChkBox"
+                    style="margin-left: 6rem;">
+                    <label for="whippedCreamChkBox"></label>Whipped Cream ($0.25)</label><br>
+
+                    <input type="checkbox" id="hotFudgeChkBox" name="hotFudgeChkBox" value="hotFudgeChkBox"
+                    style="margin-left: 15px;">
+                    <label for="hotFudgeChkBox"></label>Hot Fudge ($1.25)</label>
+            
+                    <input type="checkbox" id="cherryChkBox" name="cherryChkBox" value="cherryChkBox" 
+                    style="margin-left: 5.60rem;">
+                    <label for="cherryChkBox"></label>Cherry ($0.25)</label>
+                </div>
+            </div>
+        
+            
+            <div class="mt-3" style="text-align: center;">
+                <button type="button" id="totalCostBtn" class="btn" style="border-color: black; background-color: #59eacd;">Submit Order</button>
+            </div><br>
+        
+
+            <div style="text-align: center;">
+            <h6>Base Price: $</h6><h6 id="outputBasePrice"></h6>
+            <h6>Tax: $</h6><h6 id="outputTax"></h6>
+            <b>Total Due: $<h6 id="outputTotalDue"></h6></b><br>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
+
